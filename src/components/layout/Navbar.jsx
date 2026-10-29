@@ -82,13 +82,20 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div id="mobile-menu" className={open ? `${styles.drawer} ${styles.drawerOpen}` : styles.drawer}>
+      {/* A collapsed drawer is not interactive: `inert` keeps its links out of the
+          tab order and away from screen readers while `open` is false. */}
+      <div
+        id="mobile-menu"
+        className={open ? `${styles.drawer} ${styles.drawerOpen}` : styles.drawer}
+        inert={!open}
+      >
         <ul className={styles.drawerList}>
           {links.map((link) => (
             <li key={link.to}>
               <NavLink
                 to={link.to}
                 end={link.end}
+                onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   isActive ? `${styles.drawerLink} ${styles.drawerLinkActive}` : styles.drawerLink
                 }

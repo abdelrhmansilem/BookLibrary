@@ -120,7 +120,11 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  padding: var(--space-3) var(--space-4);
+  padding: 0 var(--space-4);
+  /* Without min-height the grid item refuses to shrink below its content,
+     so a 0fr track keeps the menu visible while `open` is false. */
+  min-height: 0;
+  overflow: hidden;
 }
 
 .drawerOpen .drawerList {

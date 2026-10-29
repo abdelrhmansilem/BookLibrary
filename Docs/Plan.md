@@ -21,11 +21,11 @@ Every single line must be understood by the team (the course rule for vibe codin
 added unless the team can explain the React concept behind it.
 
 ### Definition of Done
-- [ ] Published on Vercel with a working public URL.
-- [ ] Every page in section 5 exists and works.
-- [ ] Arabic + English with correct RTL/LTR switching, persisted after reload.
-- [ ] Dark + light theme, persisted after reload.
-- [ ] Repo is clean: README, Docs/, specs/, .gitignore, no secrets.
+- [x] Published on Vercel with a working public URL — https://booklibrary-roan.vercel.app
+- [x] Every page in section 5 exists and works.
+- [x] Arabic + English with correct RTL/LTR switching, persisted after reload.
+- [x] Dark + light theme, persisted after reload.
+- [x] Repo is clean: README, Docs/, specs/, .gitignore, no secrets.
 - [ ] Every module explained in `src/docs/` and readable inside the site at `/docs`.
 
 ---
@@ -125,9 +125,9 @@ Browser (SPA)
 | 7 | **Docs** | `/docs` | The project documentation rendered inside the site from `src/docs/*.md` |
 | 8 | **Not Found** | `*` | Friendly 404 with a link home |
 
-**Shared components:** `Navbar`, `Footer`, `ThemeToggle`, `LanguageToggle`, `BookCard`,
-`BookGrid`, `SearchBar`, `CategoryCard`, `Spinner`, `ErrorMessage`, `EmptyState`, `Pagination`,
-`ScrollToTop`, `Button`, `Input`, `Textarea`.
+**Shared components:** `Navbar`, `Footer`, `Layout`, `ThemeToggle`, `LanguageToggle`,
+`BookCard`, `BookGrid`, `BookCover`, `SearchBar`, `CategoryCard`, `Spinner`, `ErrorMessage`,
+`EmptyState`, `Icons`.
 
 ---
 
@@ -143,25 +143,27 @@ BookLibrary/
 |   |-- 001-foundation/{spec,plan,tasks}.md
 |   |-- 002-layout/
 |   |-- 003-data-layer/
-|   |-- 004-books/
-|   |-- 005-home-categories/
-|   |-- 006-pages/
-|   `-- 007-deploy/
+|   |-- 004-catalogue/
+|   |-- 005-home-and-categories/
+|   |-- 006-content-pages/
+|   |-- 007-polish/
+|   `-- 008-deploy/
 |-- public/
 |-- src/
 |   |-- components/
-|   |   |-- layout/     Navbar, Footer, Layout, ScrollToTop
-|   |   |-- books/      BookCard, BookGrid, BookCover
-|   |   |-- ui/         Button, Input, Textarea, Spinner, ErrorMessage, EmptyState, Pagination
+|   |   |-- layout/     Navbar, Footer, Layout
+|   |   |-- books/      BookCard, BookGrid, BookCover, SearchBar, CategoryCard
+|   |   |-- ui/         Spinner, ErrorMessage, EmptyState, Icons
 |   |   `-- controls/   ThemeToggle, LanguageToggle
 |   |-- context/        ThemeContext, I18nContext, FavouritesContext
+|   |-- data/           categories.js (the six sections)
 |   |-- docs/           in-app documentation (markdown, loaded by /docs)
 |   |-- hooks/          useDebounce, useFetch
 |   |-- locales/        ar.js, en.js
 |   |-- pages/          Home, Books, BookDetails, Categories, About, Contact, Docs, NotFound
 |   |-- services/       openLibrary.js
 |   |-- styles/         variables.css, global.css
-|   |-- utils/          format.js
+|   |-- utils/          format.js, markdown.jsx
 |   |-- App.jsx
 |   `-- main.jsx
 |-- index.html
@@ -213,18 +215,19 @@ Each phase is a deliverable with its own spec folder under `specs/`.
 
 | Phase | Name | Output | Est. |
 |---|---|---|---|
-| **P0** | Foundation | Vite scaffold, Docs, design tokens, i18n + theme providers, folder skeleton | 2 days |
-| **P1** | Layout & Navigation | Layout, Navbar, Footer, routes, 404, theme + language toggles | 2 days |
-| **P2** | Data Layer | `openLibrary.js`, `useDebounce`, `useFetch`, loading/error states | 2 days |
-| **P3** | Books | `/books` with search, subject filter, grid, pagination | 3 days |
-| **P4** | Book Details | `/books/:id` with normalised details and favourite toggle | 2 days |
-| **P5** | Home & Categories | `/` and `/categories` complete | 2 days |
-| **P6** | About, Contact, Docs | `/about`, `/contact`, `/docs` (markdown rendered in-app) | 2 days |
-| **P7** | Polish | responsive pass, accessibility, empty states, performance | 2 days |
-| **P8** | Deploy & Handover | Vercel, README final, explanation rehearsal | 1 day |
+| Phase | Name | Output | Spec-Kit folder | Est. |
+|---|---|---|---|---|
+| **P0** | Foundation | Vite scaffold, Docs, design tokens, i18n + theme providers, folder skeleton | `001-foundation` | 2 days |
+| **P1** | Layout & Navigation | Layout, Navbar, Footer, routes, 404, theme + language toggles | `002-layout` | 2 days |
+| **P2** | Data Layer | `openLibrary.js`, `useDebounce`, `useFetch`, loading/error states | `003-data-layer` | 2 days |
+| **P3** | Catalogue & Book Details | `/books` with search, subject filter, load more; `/books/:id` with favourites | `004-catalogue` | 3 days |
+| **P4** | Home & Categories | `/` hero, featured books, sections; `/categories` | `005-home-and-categories` | 2 days |
+| **P5** | About, Contact, Docs | `/about`, `/contact`, `/docs` (markdown rendered in-app), 404 | `006-content-pages` | 2 days |
+| **P6** | Polish | responsive pass, accessibility, reduced motion, RTL audit | `007-polish` | 2 days |
+| **P7** | Deploy & Handover | Vercel project, SPA rewrite, README final, explanation rehearsal | `008-deploy` | 1 day |
 
-**Total:** ~18 working days plus review time = **about 4 weeks**.
-**Dependency chain:** P0 -> P1 -> P2 -> (P3 / P5 in parallel) -> P4 -> P6 -> P7 -> P8.
+**Total:** ~16 working days plus review time = **about 3-4 weeks**.
+**Dependency chain:** P0 -> P1 -> P2 -> (P3 / P4 in parallel) -> P5 -> P6 -> P7.
 
 ---
 

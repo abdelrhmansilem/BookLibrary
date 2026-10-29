@@ -7,6 +7,8 @@ Built with React + Vite, powered by the Open Library API.
 
 `React 19` · `Vite 8` · `React Router 7` · `CSS Modules` · `Vercel`
 
+**Live:** https://booklibrary-roan.vercel.app
+
 </div>
 
 ---
@@ -28,6 +30,7 @@ no database, no accounts. Everything the browser needs comes from the public
 - Book page with cover, metadata, description and subjects.
 - Full **Arabic / English** interface with correct **RTL / LTR** switching.
 - **Dark / light** theme, persisted between visits.
+- Favourites saved in the browser.
 - Responsive layout from 360px to desktop.
 - In-app documentation at `/docs`.
 - Graceful loading, empty and error states on every page.
@@ -60,17 +63,18 @@ npm run lint      # oxlint
 ```
 BookLibrary/
 |-- Docs/            Plan.md, design_system.md
-|-- specs/           Spec-Kit artefacts per phase
+|-- specs/           Spec-Kit artefacts, one folder per phase
 |-- src/
 |   |-- components/  layout, books, ui, controls
 |   |-- context/     theme, i18n, favourites
+|   |-- data/        the six sections
 |   |-- docs/        documentation rendered in-app at /docs
 |   |-- hooks/       useDebounce, useFetch
 |   |-- locales/     ar.js, en.js
 |   |-- pages/       Home, Books, BookDetails, Categories, About, Contact, Docs, NotFound
 |   |-- services/    openLibrary.js (the only place that calls the API)
 |   |-- styles/      variables.css, global.css
-|   `-- utils/
+|   `-- utils/       format.js, markdown.jsx
 |-- public/
 |-- index.html
 |-- vercel.json
@@ -86,23 +90,34 @@ BookLibrary/
 | [`Docs/Plan.md`](Docs/Plan.md) | vision, scope, stack, architecture, pages, phases, risks |
 | [`Docs/design_system.md`](Docs/design_system.md) | colour tokens, typography, spacing, component rules |
 | [`specs/000-constitution.md`](specs/000-constitution.md) | the rules every phase must respect |
-| `specs/<phase>/` | spec, technical plan and task list per phase |
+| `specs/001-foundation` … `specs/008-deploy` | spec, technical plan and task list per phase |
 | `/docs` (in the running app) | how each part of the code works |
 
 ---
 
 ## Roadmap
 
-| Phase | Scope | State |
-|---|---|---|
-| P0 | Foundation: tokens, i18n, theme, scaffold | in progress |
-| P1 | Layout, navigation, routing | planned |
-| P2 | Open Library data layer | planned |
-| P3 | Books catalogue + book details | planned |
-| P4 | Home + categories | planned |
-| P5 | About, contact, in-app docs | planned |
-| P6 | Polish and accessibility | planned |
-| P7 | Vercel deployment | planned |
+| Phase | Scope | Spec-Kit folder | State |
+|---|---|---|---|
+| P0 | Foundation: tokens, i18n, theme, scaffold | `specs/001-foundation` | done |
+| P1 | Layout, navigation, routing | `specs/002-layout` | done |
+| P2 | Open Library data layer | `specs/003-data-layer` | done |
+| P3 | Books catalogue + book details | `specs/004-catalogue` | done |
+| P4 | Home page and sections | `specs/005-home-and-categories` | done |
+| P5 | About, contact, in-app docs | `specs/006-content-pages` | done |
+| P6 | Polish, responsiveness, accessibility | `specs/007-polish` | done |
+| P7 | Vercel deployment | `specs/008-deploy` | done |
+
+---
+
+## Deployment
+
+The site is deployed on Vercel with the Vite preset (`npm run build` → `dist`).
+`vercel.json` rewrites every path to `/index.html`, so a deep link such as
+`/books/OL45804W` loads the app instead of returning a 404.
+
+The GitHub repository is connected to the Vercel project: every push to `main`
+produces a new production deployment.
 
 ---
 

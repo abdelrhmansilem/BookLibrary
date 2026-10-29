@@ -56,6 +56,19 @@ npm run lint      # oxlint
 
 **Requirements:** Node.js 20+ and npm 10+.
 
+### Lint notes
+
+`npm run lint` (oxlint) reports **0 errors**. Five warnings remain, all intentional and easy to
+defend in a discussion:
+
+- `react/only-export-components` in the three context files — a provider and its `useX()` hook are
+  exported from the same file on purpose; splitting them would add three files for no gain.
+- `react/set-state-in-effect` in `Books.jsx` — changing the search term or the section resets the
+  page to 1 and clears the list. The reset is the point of the effect, and the in-flight request is
+  aborted by the cleanup.
+- `react/set-state-in-effect` in `Navbar.jsx` — the mobile drawer closes on every route change,
+  including the ones that do not come from a click inside the drawer (browser back, deep link).
+
 ---
 
 ## Project structure

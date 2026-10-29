@@ -3,9 +3,11 @@ import { useI18n } from "../../context/I18nContext";
 import { BookIcon } from "../ui/Icons";
 import styles from "./Footer.module.css";
 
+// Computed once at module scope: reading the clock during render is impure.
+const YEAR = new Date().getFullYear();
+
 export default function Footer() {
   const { t } = useI18n();
-  const year = new Date().getFullYear();
 
   return (
     <footer className={styles.footer}>
@@ -52,7 +54,7 @@ export default function Footer() {
 
       <div className={`container ${styles.bottom}`}>
         <p>
-          {t("footer.rights")} — <span dir="ltr">© {year} BookLibrary</span>
+          {t("footer.rights")} — <span dir="ltr">© {YEAR} BookLibrary</span>
         </p>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-﻿# Phase 002 — Layout and navigation
+# Phase 002 — Layout and navigation
 
 ## User stories
 - **US-1** As a visitor I can reach every page from the navbar on desktop and mobile.

@@ -1,4 +1,4 @@
-﻿# BookLibrary — Design System
+# BookLibrary — Design System
 
 The single source of truth for colours, type, spacing and component behaviour.
 Every value here is implemented in `src/styles/variables.css` — if the code and this file

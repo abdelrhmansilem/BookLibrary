@@ -1,4 +1,4 @@
-﻿# Phase 002 — Tasks
+# Phase 002 — Tasks
 - [ ] T1 Build `Layout` with Outlet — *Member 2*
 - [ ] T2 Build `Navbar` desktop + mobile drawer — *Member 2*
 - [ ] T3 Build `Footer` — *Member 2*

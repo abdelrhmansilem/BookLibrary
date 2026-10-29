@@ -1,0 +1,73 @@
+/* BookLibrary design tokens - see Docs/design_system.md */
+
+:root {
+  /* Typography */
+  --font-ar: "Cairo", "Segoe UI", system-ui, sans-serif;
+  --font-en: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* Light theme */
+  --color-bg: #f7f5f0;
+  --color-surface: #ffffff;
+  --color-surface-2: #efece4;
+  --color-text: #1b1c1d;
+  --color-text-muted: #5c6066;
+  --color-border: #e0dcd2;
+  --color-primary: #1f3a5f;
+  --color-primary-hover: #2b4f7d;
+  --color-primary-contrast: #ffffff;
+  --color-accent: #c8892b;
+  --color-accent-soft: #f6e7cd;
+  --color-success: #2f7d5b;
+  --color-danger: #b3392f;
+  --shadow-1: 0 1px 2px rgba(27, 28, 29, 0.06);
+  --shadow-2: 0 8px 24px rgba(27, 28, 29, 0.1);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* Motion */
+  --transition-fast: 120ms ease;
+  --transition-base: 220ms ease;
+
+  /* Layout */
+  --container: 1200px;
+  --navbar-height: 64px;
+}
+
+[data-theme="dark"] {
+  --color-bg: #121417;
+  --color-surface: #1a1d21;
+  --color-surface-2: #23272c;
+  --color-text: #ecebe7;
+  --color-text-muted: #a0a6ad;
+  --color-border: #2e3339;
+  --color-primary: #7fa8d9;
+  --color-primary-hover: #9dc0e8;
+  --color-primary-contrast: #0f1216;
+  --color-accent: #e0a44a;
+  --color-accent-soft: #3a2f1d;
+  --color-success: #62b992;
+  --color-danger: #e2796f;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+  }
+}

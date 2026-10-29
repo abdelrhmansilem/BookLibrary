@@ -1,0 +1,41 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 60vh;
+  text-align: center;
+}
+
+.code {
+  font-size: clamp(60px, 12vw, 110px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: 24px;
+}
+
+.text {
+  color: var(--color-text-muted);
+  margin-block-end: var(--space-3);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding-inline: var(--space-6);
+  font-weight: 600;
+  color: var(--color-primary-contrast);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.button:hover {
+  color: var(--color-primary-contrast);
+  background-color: var(--color-primary-hover);
+}

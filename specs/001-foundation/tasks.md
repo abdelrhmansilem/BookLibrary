@@ -1,4 +1,4 @@
-﻿# Phase 001 — Tasks
+# Phase 001 — Tasks
 
 - [ ] T1 Scaffold Vite React app and clean the template — *Lead*
 - [ ] T2 Write `variables.css` with light + dark tokens — *Member 2*

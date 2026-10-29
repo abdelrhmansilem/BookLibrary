@@ -1,4 +1,4 @@
-﻿# Phase 002 — Technical Plan
+# Phase 002 — Technical Plan
 
 1. `src/components/layout/Layout.jsx` = `<Navbar/> <main><Outlet/></main> <Footer/>`.
 2. `src/App.jsx` declares `<Routes>` with `Layout` as the parent route.

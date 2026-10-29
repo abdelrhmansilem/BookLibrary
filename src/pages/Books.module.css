@@ -1,0 +1,88 @@
+.header {
+  margin-block-end: var(--space-5);
+}
+
+.title {
+  font-size: clamp(26px, 4vw, 34px);
+  margin-block-end: var(--space-2);
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-block-end: var(--space-4);
+}
+
+.selectWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.select {
+  height: 42px;
+  padding-inline: var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.count {
+  margin-block-end: var(--space-4);
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-block-start: var(--space-6);
+}
+
+.moreButton,
+.clearButton {
+  height: 44px;
+  padding-inline: var(--space-6);
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.moreButton:hover,
+.clearButton:hover {
+  color: var(--color-primary-contrast);
+  background-color: var(--color-primary);
+}
+
+.moreButton:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+@media (min-width: 768px) {
+  .controls {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .controls > :first-child {
+    flex: 1;
+    max-width: 520px;
+  }
+}

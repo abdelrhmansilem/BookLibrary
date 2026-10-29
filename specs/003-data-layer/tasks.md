@@ -1,4 +1,4 @@
-﻿# Phase 003 — Tasks
+# Phase 003 — Tasks
 - [ ] T1 Implement `openLibrary.js` with AbortController + timeout — *Member 3*
 - [ ] T2 Implement `normalizeBook` with fallbacks — *Member 3*
 - [ ] T3 Implement `useDebounce` — *Member 3*

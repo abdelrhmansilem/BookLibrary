@@ -1,4 +1,4 @@
-﻿# BookLibrary Constitution
+# BookLibrary Constitution
 
 Version 1.0.0 — ratified 2026-10-28 — Team Lead: Abdelrhman Silem
 

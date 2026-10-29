@@ -1,4 +1,4 @@
-﻿# Phase 001 — Technical Plan
+# Phase 001 — Technical Plan
 
 ## Steps
 1. Scaffold with `npm create vite@latest -- --template react` (already done).

@@ -1,4 +1,4 @@
-﻿# Phase 003 — Data layer
+# Phase 003 — Data layer
 
 ## User stories
 - **US-1** As a developer I call one function to search books and get clean objects.

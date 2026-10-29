@@ -1,4 +1,4 @@
-﻿# Phase 001 — Foundation
+# Phase 001 — Foundation
 
 ## User stories
 

@@ -1,4 +1,4 @@
-﻿# Phase 003 — Technical Plan
+# Phase 003 — Technical Plan
 
 ```
 services/openLibrary.js

@@ -1,4 +1,4 @@
-﻿# BookLibrary — Project Plan
+# BookLibrary — Project Plan
 
 > **Course:** Web Development (Front-End)
 > **Type:** Team project — React Single Page Application
